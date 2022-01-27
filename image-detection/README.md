@@ -1,6 +1,6 @@
 # Image Detection application
 
-This is a minimal CRUD service exposing a couple of endpoints over REST.
+This is a minimal CRUD service exposing a few endpoints over REST.
 
 Under the hood, this demo uses:
 
