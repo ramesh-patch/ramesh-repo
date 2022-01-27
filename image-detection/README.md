@@ -72,6 +72,12 @@ After getting a cup of coffee, you'll be able to run this executable directly:
 
 > ./target/image-detection-1.0.0-SNAPSHOT-runner
 
+## External Service
+The external service Imagga is used for detecting objects of an image. 
+A basic authorization code needs to be sent as part of the Header for the POST and PUT requests.
+
+Authorization: Basic xyz
+
 ## Tests
 
 Run the tests using the command
