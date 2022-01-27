@@ -52,7 +52,7 @@ Have a look at how fast it boots, or measure the total native memory consumption
 
 ### Run Quarkus as a native executable
 
-For running as a native executable we will need to setup and configure GrallVM.
+For running as a native executable a GrallVM needs to be setup and configured.
 
 See the [Building a Native Executable guide](https://quarkus.io/guides/building-native-image-guide)
 for help setting up your environment.
