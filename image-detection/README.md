@@ -13,11 +13,16 @@ To compile and run this demo you will need:
 
 - JDK 11+
 - Maven
+- Postgres
 
 ### Configuring Maven and JDK 11+
 
 Make sure that both the `M2_HOME` and `JAVA_HOME` environment variables have
 been set, and that a JDK 11+ `java` command is on the path.
+
+### Postgres Database
+
+Install postgres and create databases imagedb and testdb.
 
 ## Building the application
 
