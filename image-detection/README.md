@@ -28,14 +28,17 @@ Install postgres and create databases imagedb and testdb.
 
 Launch the Maven build on the checked out sources of this demo:
 
-> ./mvnw package
-
+```shell script
+ ./mvnw package
+```
 ### Live coding with Quarkus
 
 The Maven Quarkus plugin provides a development mode that supports
 live coding. To try this out:
 
-> ./mvnw quarkus:dev
+```shell script
+ ./mvnw quarkus:dev
+```
 
 This command will leave Quarkus running in the foreground listening on port 8080.
 
@@ -47,13 +50,45 @@ conventional jar file.
 
 First compile it:
 
-> ./mvnw package
+```shell script
+ ./mvnw package
+```
 
 Then run it:
 
-> java -jar ./target/quarkus-app/quarkus-run.jar
+```shell script
+ java -jar ./target/quarkus-app/quarkus-run.jar
+```
 
 Have a look at how fast it boots, or measure the total native memory consumption.
+
+### Run the application as container services
+
+Docker needs to be installed in the environment. For windows environment Docker desktop can be installed.
+
+Compile using the following command:
+
+```shell script
+./mvnw clean package -Dquarkus.container-image.build=true
+```
+
+Build the image:
+
+```shell script
+docker build -f src/main/docker/Dockerfile.jvm -t quarkus/image-detection-jvm .
+```
+
+Bring up the services:
+
+```shell script
+docker-compose up -d
+```
+
+Bring down the services:
+
+```shell script
+docker-compose down
+```
 
 ### Run Quarkus as a native executable
 
@@ -71,11 +106,15 @@ Compiling a native executable takes a bit longer, as GraalVM performs additional
 steps to remove unnecessary codepaths. Use the  `native` profile to compile a
 native executable:
 
-> ./mvnw package -Dnative
+```shell script
+./mvnw package -Dnative
+```
 
 After getting a cup of coffee, you'll be able to run this executable directly:
 
+```shell script
 > ./target/image-detection-1.0.0-SNAPSHOT-runner
+```
 
 ## External Service
 The external service Imagga is used for detecting objects of an image. 
